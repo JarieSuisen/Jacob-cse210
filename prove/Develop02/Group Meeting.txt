@@ -1,0 +1,50 @@
+
+What do?
+Creates a prompt to add a journal entry
+Input for a new journal entry
+Stores journal entries
+Recalls/displays journal entries
+
+User inputs?
+Writing the journal entry.
+Date(?)
+Menu selections
+
+Outputs?
+On-screen Printed prompt
+On-screen printed jounal entry logs
+On-screen Printed menu options
+Saving the journal file
+
+How does it end?
+Menu option to end program
+
+---------------------------------------
+Class:      (name)
+Variable:   (name)
+Method:     (name)
++++++++++++++++++++++
+
+Class:      Menu Options
+Variable:   List of Menu options    :   List/String
+Method:     On-screen Print Menu    :   void
+Method:     End Program             :   void
+
+Class:      Journal Storage
+Variable:   New Journal entry       :   String
+Variable:   Loaded Journal Data     :   List/String
+Variable:   Datetime (if read)      :   String
+Method:     Save Journal file       :   (Variable)
+Method:     Load Journal file       :   (File data)
+Method:     Read datetime           :   datetime string
+Method:     On-screen Print Journal Data    :   void(?) / string (journal entry)
+
+Class:      Prompt Generator
+Variable:   List of Prompts     :   List/String
+Variable:   Pulled Prompt       :   String
+Method:     Random Generator (choose one prompt)    :   String
+Method:     On-screen Print Prompt  :   void
+
+Can add Error-catching.
+
+
