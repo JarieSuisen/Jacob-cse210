@@ -3,6 +3,11 @@ using System.Runtime.CompilerServices;
 using System.IO;
 using System.IO.Compression;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+// using System.Web.UI;
+// using System.Web.Script.Serialization;
 
 class Program
 {
@@ -24,7 +29,7 @@ class Program
             Console.WriteLine("2. Read journal");
             Console.WriteLine("3. Save journal");
             Console.WriteLine("4. Load journal");
-            Console.WriteLine("5. Close journal");
+            Console.WriteLine("5. Close journal (without saving)");
             
             
             string userSelectionString = Console.ReadLine();
@@ -65,7 +70,18 @@ class Program
                 // TEST DATETIME READING
                 Console.WriteLine(newEntry._dateString);
 
+                
+
                 journalFile.AddEntry(newEntry);
+
+
+                
+
+
+
+    // TEST THAT THE JOURNAL IS UPDATED INSTEAD OF EMPTY
+    Console.WriteLine("THIS IS THE JOURNALFILE CONTENTS:");
+    Console.WriteLine($"CONTENTS: {journalFile}");
 
                 // string newEntryFull = $"[{newEntry._dateString}] {newEntry._prompt}: \n{newEntry._journalEntry}";
 
@@ -102,9 +118,9 @@ class Program
                 Console.WriteLine("Option 3: Save Journal.\nWhat is the name of the journal?");
 
                 // Grab filename
-                journalFile._fileName = Console.ReadLine();
+                string filename = Console.ReadLine();
                 // SAVE FILE
-                journalFile.SaveFile();
+                journalFile.SaveFile(filename);
 
             }
 
@@ -115,23 +131,24 @@ class Program
                 Console.WriteLine("Option 4: Load Journal.\nWhat is the name of the journal?");
 
                 // Grab filename
-                journalFile._fileName = Console.ReadLine();
+                string filename = Console.ReadLine();
                 // LOAD FILE
-                journalFile.LoadFile();
+                journalFile.LoadFile(filename);
 
             }
 
             else if (userSelection == 5){
                 /*BLANK LINE*/Console.WriteLine("");
 
-                Console.WriteLine("Option 5: End program.\n\nWould you like to save your journal?");
-                string closeChoice = Console.ReadLine().ToLower();
-                if (closeChoice == "yes")
-                {
-                    // SAVEFILE
-                    Console.Write("Journal saved. Closing journal.");
-                    // CURRENTLY THIS IS NOT TRUE, THE SAVE FEATURE IS NOT YET FUNCTIONING NOR ACTUALLY PLACED HERE.
-                }
+                Console.WriteLine("Option 5: End program.");
+                // \n\nWould you like to save your journal?");
+                // string closeChoice = Console.ReadLine().ToLower();
+                // if (closeChoice == "yes")
+                // {
+                //     // SAVEFILE
+                //     Console.Write("Journal saved. Closing journal.");
+                //     // CURRENTLY THIS IS NOT TRUE, THE SAVE FEATURE IS NOT YET FUNCTIONING NOR ACTUALLY PLACED HERE.
+                // }
 
 
             }

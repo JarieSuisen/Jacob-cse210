@@ -15,6 +15,7 @@ public class Entry
 
             string entryLine = $"[{_dateString}] {_prompt}: \n{_journalEntry}";
             Console.WriteLine(entryLine);
+            Console.WriteLine("");
 
         }
 
