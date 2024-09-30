@@ -47,6 +47,7 @@ public class Journal
         
 
 // TESTING JUST A TEXT FILE    WHY DOES _journalEntries ALWAYS PRINT BLANK?!
+/*
         using (StreamWriter outputFile = new StreamWriter($"{filename}.txt"))
         {
             
@@ -55,20 +56,22 @@ public class Journal
                 outputFile.WriteLine(i);
             }
         }
+*/
 
+// JSON DESIGN
 
-
-/*
+/**/
         // // ------- Convert data to jsonString
 
         string jsonString = JsonSerializer.Serialize(_journalEntries, new JsonSerializerOptions() { WriteIndented = true});  
         
-        Console.WriteLine($"The JSON STRING IS: {jsonString} to be in file {filename} (FILE HAS NOT ACTUALLY BEEN CREATED)");
+        // IF DISABLING THE outputFile function, uncomment here to verify this is reached
+        // Console.WriteLine($"The JSON STRING IS: {jsonString} to be in file {filename} (FILE HAS NOT ACTUALLY BEEN CREATED)");
 
         // // OR
 
-        string jsonString = JsonConvert.SerializeObject(_journalEntries.ToArray());
-*/
+        // string jsonString = JsonConvert.SerializeObject(_journalEntries.ToArray());
+/**/
 
         // // OR
 
@@ -77,13 +80,13 @@ public class Journal
 
 
 
-/*
+/**/
         // ------- Creates the file using the filename.
         using (StreamWriter outputFile = new StreamWriter($"{filename}.json"))  
         {  
             outputFile.WriteLine(jsonString);  
         }  
-*/
+/**/
 
 
     }
