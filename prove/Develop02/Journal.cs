@@ -47,20 +47,26 @@ public class Journal
         
 
 // TESTING JUST A TEXT FILE    WHY DOES _journalEntries ALWAYS PRINT BLANK?!
-/*
+/**/
         using (StreamWriter outputFile = new StreamWriter($"{filename}.txt"))
         {
             
+            // outputFile.WriteLine(_journalEntries);
+
             foreach (Entry i in _journalEntries)
             {
-                outputFile.WriteLine(i);
+                string entryDate = $"{i._dateString}";
+                string entryPrompt = $"{i._prompt}";
+                string entryText = $"{i._journalEntry}";
+
+                outputFile.WriteLine($"{entryDate},{entryPrompt},{entryText}");
             }
         }
-*/
+/**/
 
 // JSON DESIGN
 
-/**/
+/*
         // // ------- Convert data to jsonString
 
         string jsonString = JsonSerializer.Serialize(_journalEntries, new JsonSerializerOptions() { WriteIndented = true});  
@@ -71,7 +77,7 @@ public class Journal
         // // OR
 
         // string jsonString = JsonConvert.SerializeObject(_journalEntries.ToArray());
-/**/
+*/
 
         // // OR
 
@@ -80,13 +86,13 @@ public class Journal
 
 
 
-/**/
+/*
         // ------- Creates the file using the filename.
         using (StreamWriter outputFile = new StreamWriter($"{filename}.json"))  
         {  
             outputFile.WriteLine(jsonString);  
         }  
-/**/
+*/
 
 
     }
@@ -95,12 +101,45 @@ public class Journal
 
 
     // Method: LOAD FILE
-    public void LoadFile(string filename)
+    public static List<Entry> LoadFile(string filename)
     {
+        string filenameLoad = $"{filename}.txt";
         try
         {       
            
+            // START A NEW JOURNAL
+            // Journal journalFile = new Journal();
+            List<Entry> journalFile = new List<Entry>();
 
+
+            // ADD TO NEW JOURNAL
+            string[] lines = System.IO.File.ReadAllLines(filenameLoad);
+            foreach (string line in lines)
+            {
+                Entry newEntry = new Entry();
+
+                string[] parts = line.Split(",");
+
+                string entryDate = parts[0];
+                string entryPrompt = parts[1];
+                string entryText = parts[2];
+
+                newEntry._dateString = entryDate;
+                newEntry._prompt = entryPrompt;
+                newEntry._journalEntry = entryText;
+
+                Console.WriteLine("This is the inserted journal:");
+                Console.WriteLine(newEntry._dateString);
+                Console.WriteLine(newEntry._prompt);
+                Console.WriteLine(newEntry._journalEntry);
+
+                journalFile.Add(newEntry);
+
+            }
+
+            return journalFile;
+
+/*
         using (StreamReader r = new StreamReader($"{filename}.json"))  
         {  
             string json = r.ReadToEnd();  
@@ -109,12 +148,12 @@ public class Journal
 
         List<Entry> destination = _journalEntries.Select(d => new Entry  
         {
-            // THESE MAY NEED UPDATED, I think the firest part is wrong, it needs to match the JSON identifiers
+            // THESE MAY NEED UPDATED, I think the first part is wrong, it needs to match the JSON identifiers
             _dateString = d._dateString,  
             _prompt = d._prompt,  
             _journalEntry = d._journalEntry,    
         }).ToList();  
-
+*/
 
 
 
@@ -128,6 +167,7 @@ public class Journal
         {
             Console.WriteLine("The file does not exist.");
         }
+        
     }   
 
 }

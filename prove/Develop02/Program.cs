@@ -126,6 +126,7 @@ class Program
 
             else if (userSelection == 4)
             {
+
                 /*BLANK LINE*/Console.WriteLine("");
 
                 Console.WriteLine("Option 4: Load Journal.\nWhat is the name of the journal?");
@@ -133,7 +134,9 @@ class Program
                 // Grab filename
                 string filename = Console.ReadLine();
                 // LOAD FILE
-                journalFile.LoadFile(filename);
+                journalFile = Journal.LoadFile(filename);
+                Console.WriteLine("JOURNAL LOADED, printing JOURNAL");
+                journalFile.DisplayAllEntries();
 
             }
 
