@@ -23,7 +23,7 @@ public class PromptGenerator
 
                 string promptText = prompts[number];
 
-                Console.WriteLine(promptText);
+                // Console.WriteLine(promptText);
 
                 return promptText;
             }

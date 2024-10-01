@@ -58,7 +58,7 @@ class Program
                 // Call the random Prompt
                 newEntry._prompt = newPrompt.RandomPrompt();
 
-                // TEST PROMPT GENERATION
+                // PROMPT GENERATION
                 Console.WriteLine(newEntry._prompt);
                 
                 // Read the new entry responding to the prompt
@@ -68,7 +68,7 @@ class Program
                 newEntry._dateString = newEntry.GetDateTime();
 
                 // TEST DATETIME READING
-                Console.WriteLine(newEntry._dateString);
+                // Console.WriteLine(newEntry._dateString);
 
                 
 
@@ -80,8 +80,8 @@ class Program
 
 
     // TEST THAT THE JOURNAL IS UPDATED INSTEAD OF EMPTY
-    Console.WriteLine("THIS IS THE JOURNALFILE CONTENTS:");
-    Console.WriteLine($"CONTENTS: {journalFile}");
+    // Console.WriteLine("THIS IS THE JOURNALFILE CONTENTS:");
+    // Console.WriteLine($"CONTENTS: {journalFile}");
 
                 // string newEntryFull = $"[{newEntry._dateString}] {newEntry._prompt}: \n{newEntry._journalEntry}";
 
@@ -134,7 +134,7 @@ class Program
                 // Grab filename
                 string filename = Console.ReadLine();
                 // LOAD FILE
-                journalFile = Journal.LoadFile(filename);
+                journalFile.LoadFile(filename);
                 Console.WriteLine("JOURNAL LOADED, printing JOURNAL");
                 journalFile.DisplayAllEntries();
 

@@ -23,17 +23,17 @@ public class Journal
     {
         _journalEntries.Add(newEntry);
 
-        // TESTING IF THIS WORKS
-        Console.WriteLine("");
-        Console.WriteLine("from Journals.AddEntry: Added Entry (I hope)");
-        Console.WriteLine($"From Journals.AddEntry: Current count of entries: {_journalEntries.Count()}");
+        // // TESTING IF THIS WORKS
+        // Console.WriteLine("");
+        // Console.WriteLine("from Journals.AddEntry: Added Entry (I hope)");
+        // Console.WriteLine($"From Journals.AddEntry: Current count of entries: {_journalEntries.Count()}");
     }
 
     public void DisplayAllEntries()
     {
 
-        Console.WriteLine($"The current Jounral Entry count: {_journalEntries.Count()}");
-
+        // Console.WriteLine($"The current Jounral Entry count: {_journalEntries.Count()}");
+        Console.WriteLine("");
         foreach (Entry i in _journalEntries)
         {
             i.DisplayEntry();
@@ -46,9 +46,9 @@ public class Journal
     {
         
 
-// TESTING JUST A TEXT FILE    WHY DOES _journalEntries ALWAYS PRINT BLANK?!
+
 /**/
-        using (StreamWriter outputFile = new StreamWriter($"{filename}.txt"))
+        using (StreamWriter outputFile = new StreamWriter($"{filename}.csv"))
         {
             
             // outputFile.WriteLine(_journalEntries);
@@ -63,6 +63,7 @@ public class Journal
             }
         }
 /**/
+        Console.WriteLine("");
 
 // JSON DESIGN
 
@@ -101,15 +102,16 @@ public class Journal
 
 
     // Method: LOAD FILE
-    public static List<Entry> LoadFile(string filename)
+    public void LoadFile(string filename)
     {
-        string filenameLoad = $"{filename}.txt";
+        string filenameLoad = $"{filename}.csv";
         try
         {       
            
             // START A NEW JOURNAL
             // Journal journalFile = new Journal();
-            List<Entry> journalFile = new List<Entry>();
+            // List<Entry> journalFile = new List<Entry>();
+            _journalEntries.Clear();
 
 
             // ADD TO NEW JOURNAL
@@ -133,11 +135,11 @@ public class Journal
                 Console.WriteLine(newEntry._prompt);
                 Console.WriteLine(newEntry._journalEntry);
 
-                journalFile.Add(newEntry);
+                _journalEntries.Add(newEntry);
 
             }
 
-            return journalFile;
+            // return journalFile;
 
 /*
         using (StreamReader r = new StreamReader($"{filename}.json"))  
@@ -165,7 +167,8 @@ public class Journal
         }
         finally
         {
-            Console.WriteLine("The file does not exist.");
+            // This was supposed to be so it would handle non-existing files, but it always prints. I'm not worrying about error fixing right now.
+            // Console.WriteLine("The file does not exist.");
         }
         
     }   
