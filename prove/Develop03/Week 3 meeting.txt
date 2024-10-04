@@ -1,0 +1,23 @@
+
+
+Class: Scripture
+
+Variable: Verse Reference (String)
+Variable: Verse Text (String)
+
+Method: Set Reference amd Text
+Method: Set Reference and Text (Called by WordHider)
+
+Method: Call Reference and Text
+
+
+
+Class WordHider
+
+Variable: string "_____"
+
+Method: Splits the verse string(s) and replaces a random X of those words with Emptry String
+        Calls SCRIPTURE:Set Reference and Text to replace the verse text string with the hidden version.
+
+Class Display Verse        
+
