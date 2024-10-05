@@ -36,7 +36,7 @@ public class Fraction
 
     public void GetDecimalValue()
     {
-
+        // Generate Decimal form
         Console.WriteLine((double) _numerator / (double) _denominator);
 
     }

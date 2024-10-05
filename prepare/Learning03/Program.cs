@@ -14,6 +14,7 @@ class Program
 
         // Print the fraction
         Fraction.GetFraction();
+        // Print the Decimal form
         Fraction.GetDecimalValue();
         
         // Set the fraction. Can either leave variable blank, set a single number for whole number or two numbers for full fraction.
