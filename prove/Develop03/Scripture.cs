@@ -62,7 +62,7 @@ public class Scripture
         // TESTING WORDLIST COUNT
         // Console.WriteLine($"The List Length is: {listLength}");
 
-        int listCount = 0;
+        // int listCount = 0;
 
         // TESTING LISTCOUNT
         // Console.WriteLine($"The List Length is: {listCount}");

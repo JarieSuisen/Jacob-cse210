@@ -17,7 +17,7 @@ class Program
         // Set the Scripture Text
         scripture.SetScriptureText
         (
-            "And now Behold the end is nigh but I am not but a humble fish. Oh, and WOW!!!!"
+            "Happy is the man that findeth wisdom, and the man that getteth understanding. For the merchandise of it is better than the merchandise of silver, and the gain thereof than fine gold."
         );
         
         // SET THE SCRIPTURE REFERENCE
@@ -43,7 +43,7 @@ class Program
         // 
         while (userReply != "quit")
         {
-
+            Console.WriteLine("");
             // PROMPT TO CONTINUE OR END PROGRAM
             Console.WriteLine("Press ENTER to continue or type 'quit' to end the program.");
             userReply = Console.ReadLine().ToLower();
