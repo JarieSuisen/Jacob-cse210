@@ -1,0 +1,62 @@
+-----------------------------
+Class: Order
+
+List: a Customer and their ordered products
+
+Method: Calculate total cost
+
+Return string of Packing Label details
+
+Return string of Shipping Label
+
+    total price = sum total of each product plus one-time shipping cost
+
+    One-time cost:
+        IF USA: $5
+        IF NOT: $35
+
+Packing Label: Product Name, Product ID (for each product)
+Shipping Label: Customer Name, Address
+
+
+-----------------------------
+Class: Product
+
+Variable: Name
+Variable: Product ID
+Variable: Price
+Variable: Quantity of each product
+
+Method: Total cost of item = Price per unit * Quantity
+
+-----------------------------
+Class: Customer
+
+Variable: Name (String)
+Variable: Address (via Address Class)
+
+    Call method in Class:Address to check if IN US or NOT IN US
+
+-----------------------------
+CLass: Address
+
+Variable: Street Address
+Variable: City
+Variable: State/Province
+Variable: Country
+
+Method: Check if IS/NOT IN US (return Boolean)
+
+method: Return String of Address Details
+
++++++++++++++++++++++++++++++++++++++++++++++++++
+Program
+
+Creates 2+ orders with 2-3 products each.
+    Call and display:
+        Packing Label
+        Shipping Label
+        Total Order Price
+
+(Auto-run, no user interaction)
+

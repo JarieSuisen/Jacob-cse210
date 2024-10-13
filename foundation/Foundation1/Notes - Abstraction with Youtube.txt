@@ -1,0 +1,30 @@
+
+-----------------------------
+Class: Video
+
+Variable: Title
+Variable: Author
+Variable: Length
+
+List: Comments
+
+-----------------------------
+Class: Comments
+
+Varaible: Comment Text
+Variable: Commenter Name
+
+
++++++++++++++++++++++++++++++++++++++++
+Program Class:
+generate 3-4 videos, set values for each with list of 3-4 comments
+
+List: Holds Generated videos w/Comments
+
+Run a Loop to print each video and its details
+
+(Auto-run, no user interaction)
+
+
+
+
