@@ -1,0 +1,98 @@
+Program Class
+
+Method: Main Menu (User interface to call activities)
+
+-----------------------------------------------------------
+Activity Class (Base)
+
+variable: Activity Name (set to blank, or other default)
+variable: Activity description (set to blank or other default)
+variable: Time duration (set to 0 by default)
+
+
+
+Method: Starting Message
+    Prints:
+        Activity Name (from subclass)
+        Description of the Activity (from subclass)
+        Asks for (Then sets) the duration of the activity (in seconds)
+            USER INTERFACE: GET DURATION
+            Set variable: Time Duration
+        Tells the user to prepare
+    call the Pause Method
+
+Method: Pause
+    Prints an animation of some sort for a set duration to indicate waiting time
+
+Method: countdown
+    Prints a countdown sequence each second for X seconds (used for Breathing and Listing activities)
+
+Method: Ending Message
+    Prints:
+        Common Ending message telling the user
+            they did a good job
+    Calls the Pause Method
+    Prints:
+        The activity they completed (from subclass)
+        The length of time of the activity
+    Calls the Pause Method
+    Finishes the activity cycle (return to menu)
+
+
+-----------------------------------------------------------
+Breathing Activity (Subclass)
+
+Method(setter): Set Activity Name to "Breathing Activity" (or whatever)
+Method(setter): Set Activity Description to "(whatever)
+
+Method: Run Breathing Activity
+    Prints Start Message (From Activity Class)
+    Prints Description (From Activity Class, using the variable in Breathing Activity)
+    Print a series of alternating messages such as "breathe in" and "breathe out"
+    (Call Countdown Method)
+    Continue looping the alternating messages until the user-set duration has expired.
+    Print Ending Message (from Activity Class)
+
+
+-----------------------------------------------------------
+Reflection Activity (Subclass)
+
+List(string): Prompt List
+list(string): Question list
+
+Method(setter): Set Activity Name to "Reflection Activity" (or whatever)
+Method(setter): Set Activity Description to "(whatever)
+
+Method:
+    Print:
+        one Random Prompt (from prompt list)
+        start loop:
+            random (or in order) Question (from Question list; maybe avoid duplicates)
+            Call Pause Method
+            (Repeat random questions and pauses for the Set Duration of activity)
+    Print Ending Message (from activity class)
+
+
+-----------------------------------------------------------
+Listing Activity (Subclass)
+
+Variable (int): Number of items User enters
+List (string): Starting Message List
+
+Method(setter): Set Activity Name to "Listing Activity" (or whatever)
+Method(setter): Set Activity Description to "(whatever)
+
+Method
+    Print:
+        Random Prompt (from Starting message list)
+    (Loop sequence)
+        (Call Countdown Method)
+        Print: Prompt user to keep listing items
+    (when activity duration ends):
+    Print:
+        Count of items User entered
+    Print Ending Message (from activity Class)
+
+
+
+-----------------------------------------------------------
