@@ -27,8 +27,8 @@ public class ListingActivity : Activity
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_activityDuration);
         DateTime currentTime = DateTime.Now;
-        
-        while (currentTime != futureTime)
+
+        while (currentTime <= futureTime)
         {
 
 
@@ -40,17 +40,31 @@ public class ListingActivity : Activity
             inputList.Add(Console.ReadLine());
             Console.WriteLine("What else comes to mind?");
                 
+            
+            currentTime = DateTime.Now;
         }
         // (when activity duration ends):
         //     Print: Count of items User entered
         int inputCount = inputList.Count();
         Console.WriteLine($"You listed {inputCount} items!");
-        
+        Thread.Sleep(2000);
 
         EndingMessage();//     Print Ending Message (from Activity Class)
     }
 
 
+    public void SetList()
+    {
+        
+        promptList.Add("Who are people that you appreciate?");
+        promptList.Add("What are personal strengths of yours?");
+        promptList.Add("Who are people that you have helped this week?");
+        promptList.Add("When have you felt the Holy Ghost this month?");
+        promptList.Add("Who are some of your personal heroes?");
+        
+
+
+    }
 
 
 

@@ -30,26 +30,43 @@ public class ReflectionActivity : Activity
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_activityDuration);
         DateTime currentTime = DateTime.Now;
-        
-        while (currentTime != futureTime)
-        {
-        
-            //         start loop:
-            //             random (or in order) Question (from Question list; maybe avoid duplicates)
-            //                  user enters in things, hits enter.
 
-            // Random randomGenerator = new Random();//Generate randoms
+        while (currentTime <= futureTime)
+        {
+            // Start Loop: Ask a random question, Pause, Repeat
+            
+            
+
             int questionNumber = randomGenerator.Next(0, questionList.Count());//Grab a random number from possible item count in list
             string question = questionList[questionNumber];//assign the data at that position in the list for use
             Console.WriteLine(question);//Print the prompt
 
-            
-                // Count goes up, tracking how many 
-            Pause();//             Call Pause Method
-            //             (Repeat random questions and pauses for the Set Duration of activity)
+            Pause();
 
+            
+            currentTime = DateTime.Now;
         }
         EndingMessage();//     Print Ending Message (from Activity Class)
+    }
+
+    public void SetList()
+    {
+        promptList.Add("Think of a time when you stood up for someone else.");
+        promptList.Add("Think of a time when you did something really difficult.");
+        promptList.Add("Think of a time when you helped someone in need.");
+        promptList.Add("Think of a time when you did something truly selfless.");
+
+
+
+        questionList.Add("Why was this experience meaningful to you?");
+        questionList.Add("Have you ever done anything like this before?");
+        questionList.Add("How did you get started?");
+        questionList.Add("How did you feel when it was complete?");
+        questionList.Add("What made this time different than other times when you were not as successful?");
+        questionList.Add("What is your favorite thing about this experience?");
+        questionList.Add("What could you learn from this experience that applies to other situations?");
+        questionList.Add("What did you learn about yourself through this experience?");
+        questionList.Add("How can you keep this experience in mind in the future?");
     }
 
 

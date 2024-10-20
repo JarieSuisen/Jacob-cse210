@@ -28,6 +28,7 @@ class Program
             {
                 BreathingActivity breathing = new BreathingActivity();
                 breathing.setDetails();
+
                 breathing.BreathingTime();
             
             
@@ -37,6 +38,8 @@ class Program
             {
                 ReflectionActivity reflection = new ReflectionActivity();
                 reflection.setDetails();
+                reflection.SetList();
+                
                 reflection.ReflectionTime();
                 
             
@@ -47,6 +50,8 @@ class Program
             {
                 ListingActivity listing = new ListingActivity();
                 listing.setDetails();
+                listing.SetList();
+                
                 listing.ListingTime();
                 
                 

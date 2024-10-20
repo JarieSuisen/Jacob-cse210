@@ -45,29 +45,29 @@ public class Activity()
         // prints an animation of some sort for a set duration to indicate waiting time. ie: the user can see the program is running.
 
         // RUN PAUSE ANIMATION!!!
+        Console.WriteLine();
         while (pauseDuration != 0)
         {
-            
-            
-            Console.WriteLine("/");
+            Console.Write("/");
             Thread.Sleep(pausePeriod);//How long it actually pauses between frames, in milliseconds
             Console.Write("\b \b"); // Erase the previous character
 
-            Console.WriteLine("-");
+            Console.Write("-");
             Thread.Sleep(pausePeriod);
             Console.Write("\b \b"); // Erase the previous character
 
-            Console.WriteLine("/");
+            Console.Write("\\");
             Thread.Sleep(pausePeriod);
             Console.Write("\b \b"); // Erase the previous character
 
-            Console.WriteLine("-");
+            Console.Write("-");
             Thread.Sleep(pausePeriod);
             Console.Write("\b \b"); // Erase the previous character
 
             pauseDuration -= 1;
 
         }
+        Console.WriteLine();
 
     }
 
@@ -87,7 +87,9 @@ public class Activity()
 
     protected void EndingMessage()
     {
-        Console.Clear();
+        Console.WriteLine();
+        // Console.Clear();
+
         Console.WriteLine("Congratulations, you did a great job!");
         Pause();
         Console.WriteLine($"You finished the {_activityName} after {_activityDuration} seconds.");
