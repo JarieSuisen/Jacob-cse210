@@ -8,11 +8,12 @@ class Program
 
         string selection = "";
 
-        Console.Clear();
+        
         // Console.WriteLine("Hello Develop05 World!");
 
         while (selection != "4") //Or whatever the QUIT option is, loop the Activity menu
         {
+            Console.Clear();
             
             Console.WriteLine("Menu Options:");
             Console.WriteLine("   1. Start Breathing Activity");
@@ -51,7 +52,7 @@ class Program
                 ListingActivity listing = new ListingActivity();
                 listing.setDetails();
                 listing.SetList();
-                
+
                 listing.ListingTime();
                 
                 

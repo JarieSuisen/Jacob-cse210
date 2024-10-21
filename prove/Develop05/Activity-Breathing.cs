@@ -19,21 +19,43 @@ public class BreathingActivity : Activity
         DateTime futureTime = startTime.AddSeconds(_activityDuration);
         DateTime currentTime = DateTime.Now;
 
+        int round = 1;
+
         while (currentTime <= futureTime)
         {
+            
             //     Print a series of alternating messages such as "breathe in" and "breathe out"
-            Countdown();//     (Call Countdown Method)
+            // Countdown(9);//     (Call Countdown Method)
             //     Continue looping the alternating messages until the user-set duration has expired.
+            
+            // int countdown = 5;
+            
 
-            Console.Write("Breathe in...");
-            Console.WriteLine("5");
-            Thread.Sleep(1000);//How long it actually pauses between frames, in milliseconds
-            Console.Write("\b \b"); // Erase the previous character
-            Console.WriteLine("4");
+            // while (countdown > 0)
+            if (round == 1)
+            {
+                Console.Write("Breathe in...");
+                round = 2;
+                Countdown(5);
+            }
+            else if (round == 2)
+            {
+                Console.Write("Breathe out...");
+                round = 1;
+                Countdown(5);
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            // countdown --;
 
-            Console.Write("Breathe out...");
+            // Console.WriteLine(countdown);
+                // Thread.Sleep(1000);//How long it actually pauses between frames, in milliseconds
+            // Console.Write("\b \b"); // Erase the previous character
+            // Console.WriteLine("countdown");
 
-            Thread.Sleep(1000);
+            // Console.Write("Breathe out...");
+
+            // Thread.Sleep(1000);
 
             currentTime = DateTime.Now;
         }

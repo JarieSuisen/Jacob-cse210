@@ -67,21 +67,22 @@ public class Activity()
             pauseDuration -= 1;
 
         }
-        Console.WriteLine();
+        // Console.WriteLine();
 
     }
 
-    protected void Countdown()
+    protected void Countdown(int countDuration)
     {
-        int countDuration = 10; //This duration is in seconds
+        // int countDuration = 9; //This duration is in seconds
         // int countPeriod = 1000;//This duration is in milliseconds, which is how the computer counts time. This would be redundant, since it can be defaulted to 1000 milliseconds for a reliable 1 second
         
-        while (countDuration != 0)
+        while (countDuration >= 0)
         {
-            Console.Clear();
-            Console.WriteLine(countDuration);
+            // Console.Clear();
+            Console.Write(countDuration);
             Thread.Sleep(1000);
             countDuration --; //Reduces Countdown by 1
+            Console.Write("\b \b"); // Erase the previous character
         }
     }
 
@@ -96,6 +97,7 @@ public class Activity()
         Pause();
 
         // Loop ends, returns to Menu
+
     }
 
 }
