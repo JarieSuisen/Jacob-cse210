@@ -3,9 +3,10 @@ public class ReflectionActivity : Activity
     
     private string activityName = "Reflection Activity";
     private string activityDetails = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
-    private int reflectionCount = 0;
-    
+    // private int reflectionCount = 0;
+
     private List<string> promptList = new List<string>();
+    
     private List<string> questionList = new List<string>();
     
 
@@ -88,3 +89,4 @@ public class ReflectionActivity : Activity
 //             (Repeat random questions and pauses for the Set Duration of activity)
 //     Print Ending Message (from activity class)
 }
+
