@@ -1,0 +1,56 @@
+
+
+Provide Simple Goals to work on
+
+Eternal Goals (ever ongoing)
+
+Checklist Goal(s) that must be done X times to be "Complete"
+    Each check is worth Y XP
+        Completion of Goal is worth extra XP
+
+Display Score/XP
+
+Allow adding new Goals of any of the three types
+
+Allow recording achieving a Goal
+
+Show List of Goals (print out list of goals)
+    Must indicate if Goal is complete or not
+        If checklist, must indicate X/Y times remaining or completed (show progress)
+
+Saves and loads current set goals and current score.
+
+
+-------------------------------------------------
+Superclass Goal
+
+Subclas Simple Goal
+    When completed, earn x XP
+
+Subclass of Eternal Goal
+    Earn x XP each time you do this.
+
+Subclass of Checklist Goal
+    For each check, earn x XP
+    for completing List, earn BIG XP
+
+Class Save/Load File
+
+Main Class
+    Interface
+        Add Goal
+        Show Goals & XP
+        Progress Goal (earn XP)
+
+
+
+
+
+
+
+
+
+
+
+
+
