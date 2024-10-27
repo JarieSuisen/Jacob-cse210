@@ -12,22 +12,22 @@ class Program
         Cycling cycling = new Cycling
         (
             "4 APR 2024", //date: "DD MMM YYYY"
-            30, //duration: "X" minutes
-            12 //speed: "X" mph
+            45, //duration: "X" minutes
+            11 //speed: "X" mph
         );
 
         Running running = new Running
         (
             "29 FEB 2024", //date: "DD MMM YYYY"
-            30, //duration: "X" minutes
-            6 //distance: "X" miles
+            26, //duration: "X" minutes
+            7 //distance: "X" miles
         );
 
         Swimming swimming = new Swimming
         (
             "13 OCT 2024", //date: "DD MMM YYYY"
-            10, //duration: "X" minutes
-            60 //laps: "X" laps
+            30, //duration: "X" minutes
+            50 //laps: "X" laps
         );
 
         activities.Add(cycling);
