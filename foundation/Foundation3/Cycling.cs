@@ -16,7 +16,6 @@ public class Cycling : Activity
         int duration = Duration();
         string date = Date();
         //    6      =   12   / 60 *    30
-        
         int distance = _speed / 60 * duration; // CALCULATION PROBLEM WHY???
         int pace = 60 / _speed;
         
